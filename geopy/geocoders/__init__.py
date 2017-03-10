@@ -77,20 +77,21 @@ __all__ = (
     "Baidu",
     "Bing",
     "DataBC",
-    "GeocoderDotUS",
     "GeocodeFarm",
+    "GeocoderDotUS",
     "GeoNames",
     "GoogleV3",
     "IGNFrance",
+    "LiveAddress",
+    "Mapzen",
+    "Nominatim",
     "OpenCage",
     "OpenMapQuest",
-    "Nominatim",
-    "YahooPlaceFinder",
-    "LiveAddress",
-    'Yandex',
-    "What3Words",
     "Photon",
-    "Mapzen",
+    "TomTom",
+    "What3Words",
+    "YahooPlaceFinder",
+    'Yandex',
 )
 
 
@@ -112,6 +113,7 @@ from geopy.geocoders.yandex import Yandex
 from geopy.geocoders.ignfrance import IGNFrance
 from geopy.geocoders.photon import Photon
 from geopy.geocoders.mapzen import Mapzen
+from geopy.geocoders.tomtom import TomTom
 
 
 from geopy.exc import GeocoderNotFound
@@ -122,21 +124,22 @@ SERVICE_TO_GEOCODER = {
     "baidu": Baidu,
     "bing": Bing,
     "databc": DataBC,
-    "google": GoogleV3,
-    "googlev3": GoogleV3,
+    "geocodefarm": GeocodeFarm,
     "geocoderdotus": GeocoderDotUS,
     "geonames": GeoNames,
-    "yahoo": YahooPlaceFinder,
-    "placefinder": YahooPlaceFinder,
-    "opencage": OpenCage,
-    "openmapquest": OpenMapQuest,
+    "google": GoogleV3,
+    "googlev3": GoogleV3,
+    "ignfrance": IGNFrance,
     "liveaddress": LiveAddress,
     "nominatim": Nominatim,
-    "geocodefarm": GeocodeFarm,
+    "opencage": OpenCage,
+    "openmapquest": OpenMapQuest,
+    "photon": Photon,
+    "placefinder": YahooPlaceFinder,
+    "tomtom": TomTom,
     "what3words": What3Words,
+    "yahoo": YahooPlaceFinder,
     "yandex": Yandex,
-    "ignfrance": IGNFrance,
-    "photon": Photon
 }
 
 
@@ -159,4 +162,3 @@ def get_geocoder_for_service(service):
             "Unknown geocoder '%s'; options are: %s" %
             (service, SERVICE_TO_GEOCODER.keys())
         )
-
